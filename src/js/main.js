@@ -9,7 +9,7 @@ import App from '../svelte/App.svelte';
 
 if ('serviceWorker' in navigator) {
   try {
-    navigator.serviceWorker.register('./sw.js');
+    navigator.serviceWorker.register('/sandbox-pwa/sw.js', {scope: '/sandbox-pwa/'});
   } catch (e) {
     console.log('ServiceWorker registration failed. Sorry about that.', e);
   }
