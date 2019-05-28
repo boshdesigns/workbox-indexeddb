@@ -24,7 +24,7 @@ if ('workbox' in self) {
   const assetsCacheName = 'svelte-pwa-assets-cache-' + ASSET_CACHE_VERSION;
 
   // Cache stuff that aren't being passed through Webpack
-  workbox.routing.registerRoute('/manifest.webmanifest',
+  workbox.routing.registerRoute('/sandbox-pwa/manifest.webmanifest',
     workbox.strategies.staleWhileRevalidate(
       { cacheName: assetsCacheName }
     ),
@@ -37,4 +37,3 @@ if ('workbox' in self) {
   //   ),
   // );
 }
-
