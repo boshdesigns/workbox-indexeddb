@@ -1,0 +1,11 @@
+body {
+  background-color: #FFFFFF;
+  /* background-image: url("../assets/placeholder-bg.jpg"); */
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  height: 100%;
+  width: 100%;
+
+  font-family: 'Roboto', sans-serif;
+}
