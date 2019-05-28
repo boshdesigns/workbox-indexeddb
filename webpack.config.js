@@ -14,7 +14,7 @@ module.exports = {
 		extensions: ['.mjs', '.js', '.svelte']
 	},
 	output: {
-		path: __dirname + '/public',
+		path: __dirname + '/docs',
 		filename: '[name].js',
 		chunkFilename: '[name].[id].js'
 	},
@@ -70,7 +70,7 @@ module.exports = {
 			swDest: 'sw.js',
 			importWorkboxFrom: 'local',
 			importsDirectory: 'workbox-manifest',
-			globDirectory: './public/',
+			globDirectory: './docs/',
 			globPatterns: ['*.html'],
 			exclude: [/\.DS_Store$/],
 			// include: [/\.js$/, /\.css$/, /\.jpg$/, /\.png$/, /\.woff$/, /\.ttf$/, /version.json/],
