@@ -1,5 +1,5 @@
 <script>
-  let src = 'assets/placeholder-bg.jpg';
+  let src = 'assets/images/placeholder-bg.jpg';
   let placeholderAlt = 'This is a Ben10 placeholder image';
 </script>
 

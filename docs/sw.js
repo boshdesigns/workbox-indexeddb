@@ -1,4 +1,4 @@
-importScripts("workbox-manifest/precache-manifest.2fde1e903500374cd3dd780215478ce0.js", "workbox-manifest/workbox-v4.3.1/workbox-sw.js");
+importScripts("workbox-manifest/precache-manifest.a0d1c27d973bb1cfa29ddc11050e5860.js", "workbox-manifest/workbox-v4.3.1/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "workbox-manifest/workbox-v4.3.1"});
 if ('workbox' in self) {
 
@@ -24,7 +24,7 @@ if ('workbox' in self) {
   const assetsCacheName = 'svelte-pwa-assets-cache-' + ASSET_CACHE_VERSION;
 
   // Cache stuff that aren't being passed through Webpack
-  workbox.routing.registerRoute('/sandbox-pwa/manifest.webmanifest',
+  workbox.routing.registerRoute('/manifest.webmanifest',
     workbox.strategies.staleWhileRevalidate(
       { cacheName: assetsCacheName }
     ),
@@ -37,3 +37,4 @@ if ('workbox' in self) {
   //   ),
   // );
 }
+
