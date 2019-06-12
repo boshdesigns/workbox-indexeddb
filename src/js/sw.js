@@ -23,7 +23,14 @@ if ('workbox' in self) {
 
   // Cache stuff that aren't being passed through Webpack
   workbox.routing.registerRoute('/manifest.webmanifest',
-    workbox.strategies.staleWhileRevalidate(
+    // Workbox will use ('old' - staleWhileRevalidate > 'new' - StaleWhileRevalidate) as a class so call with new
+    new workbox.strategies.StaleWhileRevalidate(
+      { cacheName: assetsCacheName }
+    ),
+  );
+
+  workbox.routing.registerRoute('/',
+    new workbox.strategies.StaleWhileRevalidate(
       { cacheName: assetsCacheName }
     ),
   );

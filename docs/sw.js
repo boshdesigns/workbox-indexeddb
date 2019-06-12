@@ -1,5 +1,5 @@
-importScripts("workbox-manifest/precache-manifest.7a0f33ce7c48f79b66cf8273e199980f.js", "workbox-manifest/workbox-v4.3.1/workbox-sw.js");
-workbox.setConfig({modulePathPrefix: "workbox-manifest/workbox-v4.3.1"});
+importScripts("precache-manifest.45e6437873723b70cff58f71272caf48.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+
 if ('workbox' in self) {
 
   // TODO: Should webpack handle the version number?
@@ -25,7 +25,14 @@ if ('workbox' in self) {
 
   // Cache stuff that aren't being passed through Webpack
   workbox.routing.registerRoute('/manifest.webmanifest',
-    workbox.strategies.staleWhileRevalidate(
+    // Workbox will use ('old' - staleWhileRevalidate > 'new' - StaleWhileRevalidate) as a class so call with new
+    new workbox.strategies.StaleWhileRevalidate(
+      { cacheName: assetsCacheName }
+    ),
+  );
+
+  workbox.routing.registerRoute('/',
+    new workbox.strategies.StaleWhileRevalidate(
       { cacheName: assetsCacheName }
     ),
   );
