@@ -3,6 +3,7 @@
 	import ExperienceBox from './components/ExperienceBox.svelte';
 	import Header from './components/generic/Header.svelte';
 	import PlaceholderImage from './components/generic/PlaceholderImage.svelte';
+	import AllImages from './containers/AllImages.svelte';
 
 	// Setup test variables
 	let xpValues = [5, 10, 20];
@@ -19,4 +20,5 @@
 			{/each}
 		</div>
 	</div>
+	<AllImages />
 </main>
