@@ -10,32 +10,44 @@ import App from '../svelte/App.svelte';
 if ('serviceWorker' in navigator) {
   try {
     // production
-    // navigator.serviceWorker.register('/sandbox-pwa/sw.js', {scope: '/sandbox-pwa/'});
-
-    // Local
-    navigator.serviceWorker.register('sw.js')
-    .then(function() {
+    navigator.serviceWorker.register('/sandbox-pwa/sw.js', {scope: '/sandbox-pwa/'})
+     .then(function() {
       // Nice to know. Only works in Chrome through
       if ('storage' in navigator && 'estimate' in navigator.storage) {
         navigator.storage.estimate().then(estimate => {
-          var quota = document.createElement('p');
+          var quota = document.getElementById('storage-quota');
 
           var used = parseInt(estimate.usage) / (1000 * 1000);
           var left =  parseInt(estimate.quota) / (1000 * 1000);
 
-          quota.innerHTML = `Using ${used} out of ${left} MB.`;
-          var quotaContainer = document.createElement('div');
-          quotaContainer.appendChild(quota);
-          document.body.appendChild(quotaContainer);
+          quota.innerHTML = `Storage Quota: Using ${used} out of ${left} mb`;
+
         });
       } else {
-        var quota = document.createElement('p');
+        var quota = document.getElementById('storage-quota');
         quota.innerHTML = 'Sorry pal! Can\'t use storage quota';
-        var quotaContainer = document.createElement('div');
-        quotaContainer.appendChild(quota);
-        document.body.appendChild(quotaContainer);
+
       }
     });
+
+    // Local
+    // navigator.serviceWorker.register('sw.js')
+    // .then(function() {
+    //   // Nice to know. Only works in Chrome through
+    //   if ('storage' in navigator && 'estimate' in navigator.storage) {
+    //     navigator.storage.estimate().then(estimate => {
+    //       var quota = document.getElementById('storage-quota');
+    //
+    //       var used = parseInt(estimate.usage) / (1000 * 1000);
+    //       var left =  parseInt(estimate.quota) / (1000 * 1000);
+    //
+    //       quota.innerHTML = `Using ${used} out of ${left} MB.`;
+    //     });
+    //   } else {
+    //     var quota = document.getElementById('storage-quota');
+    //     quota.innerHTML = 'Sorry pal! Can\'t use storage quota';
+    //   }
+    // });
   } catch (e) {
     console.log('ServiceWorker registration failed. Sorry about that.', e);
   }

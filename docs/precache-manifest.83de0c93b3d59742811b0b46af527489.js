@@ -1,5 +1,93 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
+    "revision": "f80970db3321030b59ba6470271d99bc",
+    "url": "assets/images/characters/cannonbolt.png"
+  },
+  {
+    "revision": "83d15a1cf7811cdb17e5b82b4a3c3801",
+    "url": "assets/images/characters/cannonbolt_enhanced.png"
+  },
+  {
+    "revision": "4cf4ee91c3ce4ebe5f317c4861a86d93",
+    "url": "assets/images/characters/diamondhead.png"
+  },
+  {
+    "revision": "8d23c85f1e61e97d255a25d8d096be18",
+    "url": "assets/images/characters/diamondhead_enhanced.png"
+  },
+  {
+    "revision": "76c40916876d83c2c15c6915feb6e676",
+    "url": "assets/images/characters/four_arms.png"
+  },
+  {
+    "revision": "bbf6b4a1903c35e527a10d990d2759af",
+    "url": "assets/images/characters/four_arms_enhanced.png"
+  },
+  {
+    "revision": "e9916da083afb120bdc8df3380cd87e6",
+    "url": "assets/images/characters/grey_matter.png"
+  },
+  {
+    "revision": "28f9854c240a7864fd84761e3144119c",
+    "url": "assets/images/characters/grey_matter_enhanced.png"
+  },
+  {
+    "revision": "eba1a5146c903076f3360af87e63d987",
+    "url": "assets/images/characters/heatblast.png"
+  },
+  {
+    "revision": "16f429f782653822f5a40742fba3903f",
+    "url": "assets/images/characters/heatblast_enhanced.png"
+  },
+  {
+    "revision": "7e69eddd6713c48ef70bf2073152562b",
+    "url": "assets/images/characters/hex.png"
+  },
+  {
+    "revision": "ff96131d1f43e12f8f040e6eb45d00e1",
+    "url": "assets/images/characters/overflow.png"
+  },
+  {
+    "revision": "f5b55ad73fa329f1e40e8931b6f53a08",
+    "url": "assets/images/characters/overflow_enhanced.png"
+  },
+  {
+    "revision": "c111b0ba7c9719234dd999a9e12071b2",
+    "url": "assets/images/characters/shock_rock_enhanced.png"
+  },
+  {
+    "revision": "55860ecf2f48213d73cae0a1bbb13077",
+    "url": "assets/images/characters/shockrock.png"
+  },
+  {
+    "revision": "7e60172b12c4ddb69b80573f25b69e43",
+    "url": "assets/images/characters/stinkfly.png"
+  },
+  {
+    "revision": "a8e5e072d39850ffe7893a9c4a1e0545",
+    "url": "assets/images/characters/stinkfly_enhanced.png"
+  },
+  {
+    "revision": "17f393bf3f52007445dfa1bd89aaa71c",
+    "url": "assets/images/characters/upgrade.png"
+  },
+  {
+    "revision": "aaa8ae158277fb9d19b65fc9f233460e",
+    "url": "assets/images/characters/wildvine.png"
+  },
+  {
+    "revision": "bcbe7f31f7bc46f05502da22b2c3c710",
+    "url": "assets/images/characters/wildvine_enhanced.png"
+  },
+  {
+    "revision": "ae343be8ada9c4359ce4894aee515f98",
+    "url": "assets/images/characters/xlr8.png"
+  },
+  {
+    "revision": "5c93e4eaa5daf05a372257440e55032d",
+    "url": "assets/images/characters/xlr8_enhanced.png"
+  },
+  {
     "revision": "482dd3c670d0f28d14a4f461d8f4ce60",
     "url": "assets/images/icons/android-icon-144x144.png"
   },
@@ -136,11 +224,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/images/placeholder-bg.jpg"
   },
   {
-    "revision": "413ed6f4bd11d6a41ae1",
+    "revision": "72999bc40637c0dd1704",
     "url": "bundle.css"
   },
   {
-    "revision": "413ed6f4bd11d6a41ae1",
+    "revision": "72999bc40637c0dd1704",
     "url": "bundle.js"
   },
   {

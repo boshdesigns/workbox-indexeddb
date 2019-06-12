@@ -360,6 +360,13 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+#storage-quota {
+  text-align: center;
+  padding: 15px;
+  background-color: #414040;
+  color: white;
+}
+
 .grid {
   box-sizing: border-box;
   position: relative;
