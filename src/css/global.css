@@ -16,3 +16,14 @@ body {
   background-color: #414040;
   color: white;
 }
+
+#app-mode {
+  text-align: center;
+  padding: 15px;
+  background-color: #3b6800;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+}

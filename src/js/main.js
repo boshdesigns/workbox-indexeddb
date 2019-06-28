@@ -29,15 +29,13 @@ if ('serviceWorker' in navigator) {
 
       }
     });
+    var appMode = document.getElementById('app-mode');
 
     if (window.matchMedia('(display-mode: standalone)').matches) {
-      var appMode = document.getElementById('app-mode');
       appMode.innerHTML = "Viewing mode: WebApp";
     } else if (window.navigator.standalone === true) {
-      var appMode = document.getElementById('app-mode');
       appMode.innerHTML = "Viewing mode: WebApp";
     } else {
-      var appMode = document.getElementById('app-mode');
       appMode.innerHTML = "Viewing mode: Desktop";
     }
 
@@ -59,6 +57,16 @@ if ('serviceWorker' in navigator) {
     //     quota.innerHTML = 'Sorry pal! Can\'t use storage quota';
     //   }
     // });
+    //
+    // var appMode = document.getElementById('app-mode');
+    //
+    // if (window.matchMedia('(display-mode: standalone)').matches) {
+    //   appMode.innerHTML = "Viewing mode: WebApp";
+    // } else if (window.navigator.standalone === true) {
+    //   appMode.innerHTML = "Viewing mode: WebApp";
+    // } else {
+    //   appMode.innerHTML = "Viewing mode: test";
+    // }
   } catch (e) {
     console.log('ServiceWorker registration failed. Sorry about that.', e);
   }
