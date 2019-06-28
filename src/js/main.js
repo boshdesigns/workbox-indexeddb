@@ -30,6 +30,17 @@ if ('serviceWorker' in navigator) {
       }
     });
 
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      var appMode = document.getElementById('app-mode');
+      appMode.innerHTML = "Viewing mode: WebApp";
+    } else if (window.navigator.standalone === true) {
+      var appMode = document.getElementById('app-mode');
+      appMode.innerHTML = "Viewing mode: WebApp";
+    } else {
+      var appMode = document.getElementById('app-mode');
+      appMode.innerHTML = "Viewing mode: Desktop";
+    }
+
     // Local
     // navigator.serviceWorker.register('sw.js')
     // .then(function() {
