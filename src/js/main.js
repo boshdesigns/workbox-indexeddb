@@ -52,36 +52,7 @@ if ('serviceWorker' in navigator) {
       var deferredPrompt;
       var btnAddContainer = document.getElementById('user-prompt');
       var btnAdd = document.getElementById('user-click');
-
-      // Listen for beforeinstallprompt
-      window.addEventListener('beforeinstallprompt', (e) => {
-        console.log("beforeinstallprompt event", e);
-
-        // Prevent Chrome 67 and earlier from automatically showing the prompt
-        e.preventDefault();
-        // Stash the event so it can be triggered later.
-        deferredPrompt = e;
-
-        btnAddContainer.style.display = 'block';
-      });
-
-      btnAdd.addEventListener('click', (e) => {
-        // hide our user interface that shows our A2HS button
-        btnAddContainer.style.display = 'none';
-        // Show the prompt
-        deferredPrompt.prompt();
-        // Wait for the user to respond to the prompt
-        deferredPrompt.userChoice
-          .then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-              console.log('User accepted the A2HS prompt');
-            } else {
-              btnAddContainer.style.display = 'none';
-              console.log('User dismissed the A2HS prompt');
-            }
-            deferredPrompt = null;
-          });
-      });
+      var closeButton = document.getElementById('close-button');
 
       function getMobileOperatingSystem() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -98,10 +69,46 @@ if ('serviceWorker' in navigator) {
 
       if(os != "unknown") {
         if(os == "iOS") {
-          document.getElementById('ios-prompt').style.display = 'block';
+          setTimeout(function() {
+            document.getElementById('ios-prompt').style.display = 'block';
+          }, 3000);
         }
         return;
+      } else {
+        // Listen for beforeinstallprompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+          console.log("beforeinstallprompt event", e);
+
+          // Prevent Chrome 67 and earlier from automatically showing the prompt
+          e.preventDefault();
+          // Stash the event so it can be triggered later.
+          deferredPrompt = e;
+
+          btnAddContainer.style.display = 'block';
+        });
+
+        btnAdd.addEventListener('click', (e) => {
+          // hide our user interface that shows our A2HS button
+          btnAddContainer.style.display = 'none';
+          // Show the prompt
+          deferredPrompt.prompt();
+          // Wait for the user to respond to the prompt
+          deferredPrompt.userChoice
+            .then((choiceResult) => {
+              if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the A2HS prompt');
+              } else {
+                btnAddContainer.style.display = 'none';
+                console.log('User dismissed the A2HS prompt');
+              }
+              deferredPrompt = null;
+            });
+        });
       }
+
+      closeButton.addEventListener('click', (e) => {
+        closeButton.parentNode.style.display = 'none';
+      });
 
     } catch (e) {
       console.log('ServiceWorker registration failed. Sorry about that.', e);
