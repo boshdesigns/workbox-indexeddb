@@ -52,7 +52,6 @@ if ('serviceWorker' in navigator) {
       var deferredPrompt;
       var btnAddContainer = document.getElementById('user-prompt');
       var btnAdd = document.getElementById('user-click');
-      var closeButton = document.getElementById('close-button');
 
       function getMobileOperatingSystem() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -106,8 +105,12 @@ if ('serviceWorker' in navigator) {
         });
       }
 
-      closeButton.addEventListener('click', (e) => {
-        closeButton.parentNode.style.display = 'none';
+      document.getElementById('ios-close-button').addEventListener('click', (e) => {
+        document.getElementById('ios-prompt').style.display = 'none';
+      });
+
+      document.getElementById('prompt-close-button').addEventListener('click', (e) => {
+        btnAddContainer.style.display = 'none';
       });
 
     } catch (e) {

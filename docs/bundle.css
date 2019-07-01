@@ -381,18 +381,18 @@ body {
   width:  100%;
   height: 100%;
   z-index: 100;
+  text-align: center;
+padding-top: 60px;
 }
 
 #user-click {
   cursor: pointer;
   border: none;
   background-color: #222;
-  color:  white;
+  color: white;
   border-radius: 25px;
-  padding:  10px 30px;
-  position: relative;
-  top: 60px;
-  left: calc(50% - 108px);
+  padding: 10px 30px;
+  display: inline-block;
 }
 
 #ios-prompt {
@@ -411,12 +411,21 @@ body {
   width: 300px;
 }
 
-#close-button {
+#prompt-close-button {
   border: none;
   background-color: white;
   border-radius: 25px;
   padding: 10px 25px;
   cursor: pointer;
+  display: inline-block;
+}
+#ios-close-button {
+  border: none;
+  background-color: white;
+  border-radius: 25px;
+  padding: 10px 25px;
+  cursor: pointer;
+  display: inline-block;
 }
 
 img {
