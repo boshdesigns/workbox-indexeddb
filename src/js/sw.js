@@ -22,7 +22,7 @@ if ('workbox' in self) {
   const assetsCacheName = 'svelte-pwa-assets-cache-' + ASSET_CACHE_VERSION;
 
   // Cache stuff that aren't being passed through Webpack
-  workbox.routing.registerRoute('/manifest.webmanifest',
+  workbox.routing.registerRoute('/manifest.json',
     // Workbox will use ('old' - staleWhileRevalidate > 'new' - StaleWhileRevalidate) as a class so call with new
     new workbox.strategies.StaleWhileRevalidate(
       { cacheName: assetsCacheName }
