@@ -76,11 +76,32 @@ if ('serviceWorker' in navigator) {
             if (choiceResult.outcome === 'accepted') {
               console.log('User accepted the A2HS prompt');
             } else {
+              btnAddContainer.style.display = 'none';
               console.log('User dismissed the A2HS prompt');
             }
             deferredPrompt = null;
           });
       });
+
+      function getMobileOperatingSystem() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+          // iOS detection from: http://stackoverflow.com/a/9039885/177710
+          if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+              return "iOS";
+          }
+
+          return "unknown";
+      }
+
+      var os = getMobileOperatingSystem();
+
+      if(os != "unknown") {
+        if(os == "iOS") {
+          document.getElementById('ios-prompt').style.display = 'block';
+        }
+        return;
+      }
 
     } catch (e) {
       console.log('ServiceWorker registration failed. Sorry about that.', e);
