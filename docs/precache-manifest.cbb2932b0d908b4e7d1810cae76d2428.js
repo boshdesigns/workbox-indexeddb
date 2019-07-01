@@ -300,11 +300,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/images/placeholder-bg.jpg"
   },
   {
-    "revision": "1ec33e8f469ddcabf540",
+    "revision": "9f5bd728fba666c134aa",
     "url": "bundle.css"
   },
   {
-    "revision": "1ec33e8f469ddcabf540",
+    "revision": "9f5bd728fba666c134aa",
     "url": "bundle.js"
   },
   {

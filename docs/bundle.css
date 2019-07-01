@@ -396,15 +396,14 @@ padding-top: 60px;
 }
 
 #ios-prompt {
-  position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
-  width:  100%;
+  width: 100%;
   height: 100%;
   z-index: 100;
   position: absolute;
-  top: 60px;
   z-index: 101;
-  left: calc(50% - 150px);
+  padding-top: 60px;
+  text-align: center;
 }
 
 #ios-prompt img {
