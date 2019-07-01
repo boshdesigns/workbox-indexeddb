@@ -4,7 +4,7 @@
   "theme_color": "#68b600",
   "background_color": "#68b600",
   "display": "fullscreen",
-  "Scope": "/sandbox-pwa/",
+  "Scope": "/",
   "start_url": "/sandbox-pwa/",
   "prefer_related_applications": false,
   "icons": [
