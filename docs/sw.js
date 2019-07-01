@@ -1,4 +1,4 @@
-importScripts("precache-manifest.a5b4fcbb016413fbd8a2b5f4b504a61c.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("precache-manifest.b00b87f2925b9276f721d51c168158ac.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 
 // Watch for install
@@ -40,14 +40,14 @@ if ('workbox' in self) {
   const assetsCacheName = 'svelte-pwa-assets-cache-' + ASSET_CACHE_VERSION;
 
   // Cache stuff that aren't being passed through Webpack
-  workbox.routing.registerRoute('/manifest.json',
+  workbox.routing.registerRoute('/sandbox-pwa/manifest.json',
     // Workbox will use ('old' - staleWhileRevalidate > 'new' - StaleWhileRevalidate) as a class so call with new
     new workbox.strategies.StaleWhileRevalidate(
       { cacheName: assetsCacheName }
     ),
   );
 
-  workbox.routing.registerRoute('/',
+  workbox.routing.registerRoute('/sandbox-pwa/',
     new workbox.strategies.StaleWhileRevalidate(
       { cacheName: assetsCacheName }
     ),
