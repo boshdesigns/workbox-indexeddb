@@ -24,6 +24,27 @@ body {
   color: white;
 }
 
+/* ADD TO HOME SCREEN */
+#user-prompt {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  width:  100%;
+  height: 100%;
+  z-index: 100;
+}
+
+#user-click {
+  cursor: pointer;
+  border: none;
+  background-color: #222;
+  color:  white;
+  border-radius: 25px;
+  padding:  10px 30px;
+  position: relative;
+  top: 60px;
+  left: calc(50% - 108px);
+}
+
 img {
   max-width: 100%;
 }

@@ -45,11 +45,11 @@ if ('workbox' in self) {
     ),
   );
 
-  workbox.routing.registerRoute('/sandbox-pwa/index.html',
-    new workbox.strategies.StaleWhileRevalidate(
-      { cacheName: assetsCacheName }
-    ),
-  );
+  // workbox.routing.registerRoute('/sandbox-pwa/index.html',
+  //   new workbox.strategies.StaleWhileRevalidate(
+  //     { cacheName: assetsCacheName }
+  //   ),
+  // );
 
   // Cache pages i.e the index page
   // workbox.routing.registerRoute('/',

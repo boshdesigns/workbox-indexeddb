@@ -1,4 +1,4 @@
-importScripts("precache-manifest.a5b4fcbb016413fbd8a2b5f4b504a61c.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("precache-manifest.7f4c167c50af44a27a64d52f887694b3.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 
 // Watch for install
@@ -47,11 +47,11 @@ if ('workbox' in self) {
     ),
   );
 
-  workbox.routing.registerRoute('/sandbox-pwa/index.html',
-    new workbox.strategies.StaleWhileRevalidate(
-      { cacheName: assetsCacheName }
-    ),
-  );
+  // workbox.routing.registerRoute('/sandbox-pwa/index.html',
+  //   new workbox.strategies.StaleWhileRevalidate(
+  //     { cacheName: assetsCacheName }
+  //   ),
+  // );
 
   // Cache pages i.e the index page
   // workbox.routing.registerRoute('/',
