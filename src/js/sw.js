@@ -45,7 +45,7 @@ if ('workbox' in self) {
     ),
   );
 
-  workbox.routing.registerRoute('/sandbox-pwa/',
+  workbox.routing.registerRoute('/sandbox-pwa/index.html',
     new workbox.strategies.StaleWhileRevalidate(
       { cacheName: assetsCacheName }
     ),
