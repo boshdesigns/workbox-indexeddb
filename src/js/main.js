@@ -10,13 +10,13 @@ import App from '../svelte/App.svelte';
 if ('serviceWorker' in navigator) {
   try {
     // production
-    navigator.serviceWorker.register('sw.js', {scope: '/sandbox-pwa/'})
+    navigator.serviceWorker.register('/sandbox-pwa/sw.js', {scope: '/sandbox-pwa/'})
      .then(function() {
       // Nice to know. Only works in Chrome through
       if ('storage' in navigator && 'estimate' in navigator.storage) {
         navigator.storage.estimate().then(estimate => {
           var quota = document.getElementById('storage-quota');
-    
+
           var used = parseInt(estimate.usage) / (1000 * 1000);
           var left =  parseInt(estimate.quota) / (1000 * 1000);
 
