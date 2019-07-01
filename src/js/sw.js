@@ -1,3 +1,19 @@
+
+// Watch for install
+self.addEventListener('install', function(event) {
+    console.log('Installed sw.js', event);
+});
+
+// Watch for active
+self.addEventListener('activate', function(event) {
+    console.log('Activated sw.js', event);
+});
+
+// Watch for fetch
+self.addEventListener('fetch', function(event){
+    console.log('SW fetch: ', event.request);
+});
+
 if ('workbox' in self) {
 
   // TODO: Should webpack handle the version number?

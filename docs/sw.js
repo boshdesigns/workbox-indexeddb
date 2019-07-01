@@ -1,4 +1,20 @@
-importScripts("precache-manifest.8d7d0316ef23883e4df28b3ce5e5de7c.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("precache-manifest.b00b87f2925b9276f721d51c168158ac.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+
+
+// Watch for install
+self.addEventListener('install', function(event) {
+    console.log('Installed sw.js', event);
+});
+
+// Watch for active
+self.addEventListener('activate', function(event) {
+    console.log('Activated sw.js', event);
+});
+
+// Watch for fetch
+self.addEventListener('fetch', function(event){
+    console.log('SW fetch: ', event.request);
+});
 
 if ('workbox' in self) {
 

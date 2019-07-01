@@ -31,6 +31,14 @@ if ('serviceWorker' in navigator) {
 
         }
       });
+
+      // SW registered
+      navigator.serviceWorker.ready.then(function (registration) {
+        console.log('Service worker successfully registered on scope', registration.scope);
+      });
+
+
+      // Check which mode the display is in
       var appMode = document.getElementById('app-mode');
 
       if (window.matchMedia('(display-mode: standalone)').matches) {
@@ -41,9 +49,10 @@ if ('serviceWorker' in navigator) {
         appMode.innerHTML = "Viewing mode: Desktop";
       }
 
+      // Listen for beforeinstallprompt
       window.addEventListener('beforeinstallprompt', (e) => {
         console.log("beforeinstallprompt event", e);
-        
+
         // Prevent Chrome 67 and earlier from automatically showing the prompt
         e.preventDefault();
         // Stash the event so it can be triggered later.
