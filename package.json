@@ -22,7 +22,7 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "webpack-dev-server --content-base docs",
+    "dev": "webpack-dev-server --content-base docs --hot --inline",
     "start": "http-server docs"
   },
   "dependencies": {

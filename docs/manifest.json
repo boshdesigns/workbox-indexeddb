@@ -4,8 +4,8 @@
   "theme_color": "#68b600",
   "background_color": "#68b600",
   "display": "standalone",
-  "Scope": "/",
-  "start_url": "https://boshdesigns.github.io/sandbox-pwa/",
+  "Scope": "/sandbox-pwa/",
+  "start_url": "/sandbox-pwa/",
   "icons": [
     {
       "src": "assets/images/icons/icon-72x72.png",
