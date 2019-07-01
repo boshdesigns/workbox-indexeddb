@@ -395,6 +395,17 @@ body {
   left: calc(50% - 108px);
 }
 
+#ios-prompt {
+  position: absolute;
+  top: 60px;
+  z-index: 101;
+  left: calc(50% - 150px);
+}
+
+#ios-prompt img {
+  width: 300px;
+}
+
 img {
   max-width: 100%;
 }
