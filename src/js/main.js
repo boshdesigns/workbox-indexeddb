@@ -40,13 +40,17 @@ if ('serviceWorker' in navigator) {
 
       // Check which mode the display is in
       var appMode = document.getElementById('app-mode');
+      var appVersion;
 
       if (window.matchMedia('(display-mode: standalone)').matches) {
         appMode.innerHTML = "Viewing mode: WebApp";
+        appVersion = "app";
       } else if (window.navigator.standalone === true) {
         appMode.innerHTML = "Viewing mode: WebApp";
+        appVersion = "app";
       } else {
         appMode.innerHTML = "Viewing mode: Desktop";
+        appVersion = "desktop";
       }
 
       var deferredPrompt;
@@ -55,19 +59,17 @@ if ('serviceWorker' in navigator) {
 
       function getMobileOperatingSystem() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-          // iOS detection from: http://stackoverflow.com/a/9039885/177710
-          if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-              return "iOS";
-          }
-
-          return "unknown";
+        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            return "iOS";
+        }
+        return "unknown";
       }
 
       var os = getMobileOperatingSystem();
 
       if(os != "unknown") {
-        if(os == "iOS") {
+        if(os == "iOS" && appVersion == "desktop") {
           setTimeout(function() {
             document.getElementById('ios-prompt').style.display = 'block';
           }, 3000);
@@ -106,6 +108,9 @@ if ('serviceWorker' in navigator) {
       }
 
       document.getElementById('ios-close-button').addEventListener('click', (e) => {
+        console.log('ios-close-button clicked');
+        console.log(document.getElementById('ios-prompt').style.display);
+
         document.getElementById('ios-prompt').style.display = 'none';
       });
 
