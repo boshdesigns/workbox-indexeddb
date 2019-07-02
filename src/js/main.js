@@ -55,6 +55,7 @@ if ('serviceWorker' in navigator) {
 
       var deferredPrompt;
       var btnAddContainer = document.getElementById('user-prompt');
+      var iosContainer = document.getElementById('ios-prompt');
       var btnAdd = document.getElementById('user-click');
 
       function getMobileOperatingSystem() {
@@ -71,7 +72,14 @@ if ('serviceWorker' in navigator) {
       if(os != "unknown") {
         if(os == "iOS" && appVersion == "desktop") {
           setTimeout(function() {
-            document.getElementById('ios-prompt').style.display = 'block';
+            iosContainer.style.display = 'block';
+
+            document.getElementById('ios-close-button').addEventListener('click', (e) => {
+              console.log('ios-close-button clicked');
+              console.log(iosContainer.style.display);
+
+              iosContainer.style.display = 'none';
+            });
           }, 3000);
         }
         return;
@@ -86,6 +94,10 @@ if ('serviceWorker' in navigator) {
           deferredPrompt = e;
 
           btnAddContainer.style.display = 'block';
+        });
+
+        document.getElementById('prompt-close-button').addEventListener('click', (e) => {
+          btnAddContainer.style.display = 'none';
         });
 
         btnAdd.addEventListener('click', (e) => {
@@ -107,16 +119,9 @@ if ('serviceWorker' in navigator) {
         });
       }
 
-      document.getElementById('ios-close-button').addEventListener('click', (e) => {
-        console.log('ios-close-button clicked');
-        console.log(document.getElementById('ios-prompt').style.display);
 
-        document.getElementById('ios-prompt').style.display = 'none';
-      });
 
-      document.getElementById('prompt-close-button').addEventListener('click', (e) => {
-        btnAddContainer.style.display = 'none';
-      });
+
 
     } catch (e) {
       console.log('ServiceWorker registration failed. Sorry about that.', e);
