@@ -76,7 +76,7 @@ if ('serviceWorker' in navigator) {
 
             console.log(document.getElementById('ios-close-button'));
 
-            document.getElementById('ios-close-button').addEventListener('click', (e) => {
+            document.getElementById('ios-close-button').addEventListener('click', function(e) {
               console.log('ios-close-button clicked');
               console.log(iosContainer.style.display);
 
@@ -87,7 +87,7 @@ if ('serviceWorker' in navigator) {
         return;
       } else {
         // Listen for beforeinstallprompt
-        window.addEventListener('beforeinstallprompt', (e) => {
+        window.addEventListener('beforeinstallprompt', function(e) {
           console.log("beforeinstallprompt event", e);
 
           // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -98,7 +98,7 @@ if ('serviceWorker' in navigator) {
           btnAddContainer.style.display = 'block';
         });
 
-        document.getElementById('prompt-close-button').addEventListener('click', (e) => {
+        document.getElementById('prompt-close-button').addEventListener('click', function(e) {
           btnAddContainer.style.display = 'none';
         });
 
