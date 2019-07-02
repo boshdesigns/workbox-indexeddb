@@ -74,6 +74,8 @@ if ('serviceWorker' in navigator) {
           setTimeout(function() {
             iosContainer.style.display = 'block';
 
+            console.log(document.getElementById('ios-close-button'));
+
             document.getElementById('ios-close-button').addEventListener('click', (e) => {
               console.log('ios-close-button clicked');
               console.log(iosContainer.style.display);
